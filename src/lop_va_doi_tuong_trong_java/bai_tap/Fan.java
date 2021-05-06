@@ -10,10 +10,20 @@ public class Fan {
     private String color;
 
     public Fan() {
+
     }
 
-    void setSpeed(int speed) {
+    /*void setSpeed(int speed) {
         this.speed = speed;
+    }*/
+    void setSLOW(int SLOW) {
+        this.speed = SLOW;
+    }
+    void setMEDIUM(int MEDIUM) {
+        this.speed = MEDIUM;
+    }
+    void setFAST(int FAST) {
+        this.speed = FAST;
     }
 
     int getSpeed() {
@@ -42,7 +52,7 @@ public class Fan {
 
     public String toString() {
         if (this.on == true) {
-            return this.speed + " " + this.color + " " + this.radius + "Fan is on";
+            return "Speed is: "+this.speed + " " + this.color + " " + this.radius + "Fan is on";
         } else {
             return this.color + " " + this.radius + "Fan is off";
         }
@@ -54,10 +64,10 @@ public class Fan {
         fan1.setOn(true);
         fan1.setRadius(10);
         fan1.setColor("yellow");
-        fan1.setSpeed(3);
+        fan1.setFAST(3);
         fan2.setRadius(5);
         fan2.setColor("blue");
-        fan2.setSpeed(2);
+        fan2.setMEDIUM(2);
         System.out.println(fan1.toString());
         System.out.println(fan2.toString());
     }
