@@ -1,39 +1,36 @@
 package lop_va_doi_tuong_trong_java.bai_tap;
 
-import java.time.LocalTime;
 
 public class StopWatch {
 
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private long startTime;
+    private long endTime;
 
     StopWatch() {
-        this.startTime = java.time.LocalTime.now();
+        this.startTime = System.currentTimeMillis();
     }
 
     public void start() {
-        this.startTime = java.time.LocalTime.now();
+        this.startTime = System.currentTimeMillis();
     }
 
     public void stop() {
-        this.endTime = java.time.LocalTime.now();
+        this.endTime = System.currentTimeMillis();
         System.out.println("StopWatch: " + getElapsedTime() + " milliseconds.");
-        System.out.println("StopWatch: " + getElapsedTimeSecs() + " seconds.");
     }
 
 
     public long getElapsedTime() {
-        return (endTime.toSecondOfDay() - startTime.toSecondOfDay());
+        return (endTime - startTime);
     }
 
-    public double getElapsedTimeSecs() {
-        double elapsed;
-        elapsed = ((double) ((endTime.toSecondOfDay() - startTime.toSecondOfDay()))) / 1000;
-        return elapsed;
-    }
 
     public static void main(String[] args) {
         StopWatch watch = new StopWatch();
         watch.start();
+        for (int i = 0; i <= 1000000000; ) {
+            i++;
+        }
+        watch.stop();
     }
 }
