@@ -54,7 +54,7 @@ public class Point2d {
 
     public static void main(String[] args) {
         Point2d point2d = new Point2d(2.2f, 3.3f);
-        point2d.setXY(2.2f,3.3f);
+        point2d.setXY(2.2f, 3.3f);
         System.out.println(point2d);
     }
 }
