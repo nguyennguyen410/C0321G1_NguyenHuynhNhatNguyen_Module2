@@ -10,5 +10,14 @@ public class InterfaceColorableTest {
             System.out.println(square);
             square.howToColor();
         }
+        Rectangle rectangle = new Rectangle(5.5,7.7);
+        Rectangle[] rectangles = {squares[0],squares[1],rectangle};
+        for (Rectangle rectangle1 : rectangles) {
+            System.out.println(rectangle1);
+            if(rectangle1 instanceof Square){
+                ((Square)rectangle1).howToColor();
+            }
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 package abstract_class_interface.bai_tap.interface_colorable;
 
-public class Square implements InterfaceColorable {
+public class Square extends Rectangle implements InterfaceColorable {
     private double side=0.0;
     private String color = "yellow";
     private boolean filled = true;
