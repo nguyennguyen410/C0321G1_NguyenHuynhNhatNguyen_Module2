@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Point2d {
     private float x = 0.0f;
     private float y = 0.0f;
-    float[] xy = new float[2];
+
 
     public Point2d() {
     }
@@ -34,11 +34,12 @@ public class Point2d {
     }
 
     public void setXY(float x, float y) {
-        xy[0] = x;
-        xy[1] = y;
+        this.x = x;
+        this.y = y;
     }
 
     public float[] getXy() {
+        float[] xy = {this.x,this.y};
         return xy;
     }
 
