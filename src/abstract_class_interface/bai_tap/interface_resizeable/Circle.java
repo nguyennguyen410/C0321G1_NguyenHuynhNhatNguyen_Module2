@@ -61,7 +61,7 @@ public class Circle implements InterfaceResizeable {
     }
 
     @Override
-    public double reSize(double percent) {
-        return this.radius = this.radius+percent;
+    public void reSize(double percent) {
+        this.setRadius(this.getRadius() * Math.sqrt(1 + percent / 100));
     }
 }

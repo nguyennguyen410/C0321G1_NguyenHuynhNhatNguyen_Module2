@@ -73,9 +73,8 @@ public class Rectangle implements InterfaceResizeable {
     }
 
     @Override
-    public double reSize(double percent) {
-        this.length = this.length + percent;
-        this.width = this.width + percent;
-        return getArea();
+    public void reSize(double percent) {
+        this.setWidth(this.getWidth() * Math.sqrt(1 + percent / 100));
+        this.setLength((this.getWidth() * Math.sqrt(1 + percent / 100)) * this.getLength() / this.getWidth());
     }
 }
