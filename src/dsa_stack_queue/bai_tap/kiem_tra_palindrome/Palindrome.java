@@ -20,8 +20,10 @@ public class Palindrome {
         }
 
         for (int j = 0; j<string.length()/2; j++ ){
-            if(stack.pop()==queue.poll()){
+            if(stack.peek()==queue.peek()){
                 status = true;
+                stack.pop();
+                queue.remove();
             }else {
                 status = false;
             }
