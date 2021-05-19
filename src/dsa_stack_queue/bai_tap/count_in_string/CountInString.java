@@ -11,21 +11,23 @@ public class CountInString {
         System.out.println("Input string: ");
         String string = input.nextLine();
         TreeMap<String, Integer> map = new TreeMap<String, Integer>();
-        String[] arrayString = string.split("[ .,!?]");
+        /*String[] arrayString = string.split("[ .,!?]");*/
+        String[] arrayString = string.split("\\s+");
 
         /*for (String i: arrayString){
             System.out.println(i);
         }*/
-        for (int j = 0; j < arrayString.length; j++) {
+        /*for (int j = 0; j < arrayString.length; j++) {
             if (arrayString[j].equals(" ")) {
                 arrayString[j] = null;
             }
-        }
+        }*/
         map.put(arrayString[0], 1);
         for (int i = 1; i < arrayString.length; i++) {
-            if (arrayString[i] == null) {
+            /*if (arrayString[i] == null) {
                 continue;
-            } else if (map.containsKey(arrayString[i])) {
+            } else*/
+            if (map.containsKey(arrayString[i])) {
                 int value = map.get(arrayString[i]) + 1;
                 map.put(arrayString[i], value);
             } else {

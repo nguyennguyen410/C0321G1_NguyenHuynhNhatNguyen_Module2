@@ -11,11 +11,16 @@ public class ReverseUseStack {
         int size = input.nextInt();
         int[] array = new int[size];
         int i = 0;
-        while (i < array.length) {
+        /*while (i < array.length) {
             System.out.print("Enter element" + (i + 1) + " : ");
             array[i] = input.nextInt();
             stack.push(array[i]);
             i++;
+        }*/
+        for ( ; i<array.length; i++){
+            System.out.print("Enter element" + (i + 1) + " : ");
+            array[i] = input.nextInt();
+            stack.push(array[i]);
         }
         for (int j = 0; j < array.length; j++) {
             array[j] = stack.pop();
