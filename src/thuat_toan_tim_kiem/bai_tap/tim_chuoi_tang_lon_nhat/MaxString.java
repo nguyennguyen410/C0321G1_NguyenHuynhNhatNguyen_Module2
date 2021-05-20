@@ -15,8 +15,8 @@ public class MaxString {
         for (int i = 0; i < string.length(); i++) {
             LinkedList<Character> list = new LinkedList<>();
             list.add(string.charAt(i));
-            for (int j = i+1; j < string.length(); j++) {
-                if ((int) string.charAt(j) > (int) list.getLast()) {
+            for (int j = i + 1; j < string.length(); j++) {
+                if (string.charAt(j) > list.getLast()) {
                     list.add(string.charAt(j));
                 }
             }
