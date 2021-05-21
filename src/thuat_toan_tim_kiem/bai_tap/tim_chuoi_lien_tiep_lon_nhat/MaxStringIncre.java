@@ -25,7 +25,7 @@ public class MaxStringIncre {
                 max.addAll(list);
             }
         }
-        
+
         for (Character ch : max) {
             System.out.print(ch);
         }
