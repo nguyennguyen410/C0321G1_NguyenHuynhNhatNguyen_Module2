@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class IllegalTriangleExceptionExample {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         double side1 = 0;
         double side2 = 0;
         double side3 = 0;
