@@ -17,12 +17,11 @@ public class IllegalTriangleExceptionExample {
                 side2 = Double.parseDouble(input.nextLine());
                 System.out.println("Nhap canh thu 3: ");
                 side3 = Double.parseDouble(input.nextLine());
-                IllegalTriangleException triangle = new IllegalTriangleException();
-                triangle.illegalTriangleException(side1, side2, side3);
+                Triangle triangle = new Triangle(side1, side2, side3);
             } catch (NumberFormatException e) {
                 System.err.println("Cac canh phai la so " + e.getMessage());
             } catch (Exception e) {
-                System.err.println("Cac canh khong dat yeu cau la canh tam giac " + e.getMessage());
+                System.err.println(e.getMessage());
             }
         }
     }
