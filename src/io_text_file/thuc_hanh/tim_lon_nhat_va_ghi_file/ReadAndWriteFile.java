@@ -49,8 +49,10 @@ public class ReadAndWriteFile {
 
     public static void main(String[] args) {
         ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
-        List<Integer> numbers = readAndWriteFile.readFile("C:\\codegym\\CG\\C0321G1_NguyenHuynhNhatNguyen_Module2\\src\\io_text_file\\thuc_hanh\\tim_lon_nhat_va_ghi_file\\number");
+        List<Integer> numbers = readAndWriteFile.readFile("C:\\codegym\\CG\\C0321G1_NguyenHuynhNhatNguyen_Module2\\src" +
+                "\\io_text_file\\thuc_hanh\\tim_lon_nhat_va_ghi_file\\number");
         int maxValue = findMax(numbers);
-        readAndWriteFile.writeFile("C:\\codegym\\CG\\C0321G1_NguyenHuynhNhatNguyen_Module2\\src\\io_text_file\\thuc_hanh\\tim_lon_nhat_va_ghi_file\\result", maxValue);
+        readAndWriteFile.writeFile("C:\\codegym\\CG\\C0321G1_NguyenHuynhNhatNguyen_Module2\\src\\io_text_file\\thuc_hanh" +
+                "\\tim_lon_nhat_va_ghi_file\\result", maxValue);
     }
 }
