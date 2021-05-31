@@ -3,7 +3,7 @@ package models;
 public class Room extends Services {
     private String freeService;
 
-    public Room(String id, String nameService, Double area, int price, int maxPeople, String rentType, String freeService) {
+    public Room(String id, String nameService, String area, String price, String maxPeople, String rentType, String freeService) {
         super(id, nameService, area, price, maxPeople, rentType);
         this.freeService = freeService;
     }

@@ -21,13 +21,13 @@ public class ManagerHouse {
         String nameService = scanner.next();
 
         System.out.println("Area: ");
-        Double area = scanner.nextDouble();
+        String area = scanner.next();
 
         System.out.println("Price: ");
-        int price = scanner.nextInt();
+        String price = scanner.next();
 
         System.out.println("Max People:");
-        int maxPeople = scanner.nextInt();
+        String maxPeople = scanner.next();
 
         System.out.println("Rent Type: ");
         String rentType = scanner.next();
@@ -37,7 +37,7 @@ public class ManagerHouse {
 
 
         System.out.println("Number Floor Of House: ");
-        int numFloor = scanner.nextInt();
+        String numFloor = scanner.next();
 
         House house = new House(id, nameService, area, price, maxPeople, rentType, typeHouse, numFloor);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();

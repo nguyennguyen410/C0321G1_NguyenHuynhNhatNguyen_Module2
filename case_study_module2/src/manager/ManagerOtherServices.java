@@ -18,7 +18,7 @@ public class ManagerOtherServices {
         String nameService = scanner.next();
 
         System.out.println("Price: ");
-        Double price = scanner.nextDouble();
+        String price = scanner.next();
 
         OtherService otherService = new OtherService(id, nameService, price);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();

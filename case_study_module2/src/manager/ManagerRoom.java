@@ -1,42 +1,87 @@
 package manager;
 
 import common.FunctionWriteAndRead;
-import models.House;
 import models.Room;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ManagerRoom {
     List<String> listRoom = new ArrayList<>();
 
     public void addNewRoom() {
+        String id, nameService, area, price, maxPeople, rentType, freeService;
+        boolean check = false;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Add New Room: ");
-        System.out.println("Id: ");
-        String id = scanner.next();
+        do {
+            System.out.println("Id Room: ");
+            id = scanner.next();
+            ManagerRoom managerRoom = new ManagerRoom();
+            check = managerRoom.regexIdRoom(id);
+            if (!check){
+                System.err.println("Id Room is not invalid");
+            }
+        }while (!check);
 
-        System.out.println("Name Service: ");
-        String nameService = scanner.next();
+        do {
+            System.out.println("Name Service: ");
+            nameService = scanner.next();
+            ManagerVilla managerVilla = new ManagerVilla();
+            check = managerVilla.regexNameService(nameService);
+            if(!check){
+                System.err.println("Name Service is not invalid");
+            }
+        }while (!check);
 
-        System.out.println("Area: ");
-        Double area = scanner.nextDouble();
+        do {
+            System.out.println("Area: ");
+            area = scanner.next();
+            ManagerVilla managerVilla = new ManagerVilla();
+            check = managerVilla.regexArea(area);
+            if(!check){
+                System.err.println("Area is not invalid");
+            }
+        }while (!check);
 
-        System.out.println("Price: ");
-        int price = scanner.nextInt();
+        do {
+            System.out.println("Price: ");
+            price = scanner.next();
+            ManagerVilla managerVilla = new ManagerVilla();
+            check = managerVilla.regexPrice(price);
+            if(!check){
+                System.err.println("Price is not invalid");
+            }
+        }while (!check);
 
-        System.out.println("Max People:");
-        int maxPeople = scanner.nextInt();
+        do {
+            System.out.println("Max People:");
+            maxPeople = scanner.next();
+            ManagerVilla managerVilla = new ManagerVilla();
+            check = managerVilla.regexPeople(maxPeople);
+            if(!check){
+                System.err.println("Max People is not invalid");
+            }
+        }while (!check);
 
-        System.out.println("Rent Type: ");
-        String rentType = scanner.next();
+        do {
+            System.out.println("Rent Type: ");
+            rentType = scanner.next();
+            ManagerVilla managerVilla = new ManagerVilla();
+            check = managerVilla.regexRentType(rentType);
+            if(!check){
+                System.err.println("Rent Type is not invalid");
+            }
+        }while (!check);
 
-        System.out.println("Type House: ");
-        String typeHouse = scanner.next();
 
         System.out.println("Free Service: ");
-        String freeService = scanner.next();
+        freeService = scanner.next();
+
+
 
         Room room = new Room(id, nameService, area, price, maxPeople, rentType, freeService);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
@@ -51,6 +96,13 @@ public class ManagerRoom {
         for (String list : listRoom) {
             System.out.println(list.toString());
         }
+    }
+
+    public boolean regexIdRoom(String regex){
+        final String ROOM_REGEX = "^SVRO\\-[0-9]{4}$";
+        Pattern pattern = Pattern.compile(ROOM_REGEX);
+        Matcher matcher = pattern.matcher(regex);
+        return matcher.matches();
     }
 }
 

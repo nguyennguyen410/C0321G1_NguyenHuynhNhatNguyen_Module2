@@ -3,15 +3,15 @@ package models;
 public abstract class Services {
     private String id;
     private String nameService;
-    private Double area;
-    private int price;
-    private int maxPeople;
+    private String area;
+    private String price;
+    private String maxPeople;
     private String rentType;
 
     public Services() {
     }
 
-    public Services(String id, String nameService, Double area, int price, int maxPeople, String rentType) {
+    public Services(String id, String nameService, String area, String price, String maxPeople, String rentType) {
         this.id = id;
         this.nameService = nameService;
         this.area = area;
@@ -36,27 +36,27 @@ public abstract class Services {
         this.nameService = nameService;
     }
 
-    public Double getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(Double area) {
+    public void setArea(String area) {
         this.area = area;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getMaxPeople() {
+    public String getMaxPeople() {
         return maxPeople;
     }
 
-    public void setMaxPeople(int maxPeople) {
+    public void setMaxPeople(String maxPeople) {
         this.maxPeople = maxPeople;
     }
 

@@ -2,10 +2,10 @@ package models;
 
 public class Villa extends Services {
     private String typeVilla;
-    private Double areaPool;
-    private int numFloorOfVilla;
+    private String areaPool;
+    private String numFloorOfVilla;
 
-    public Villa(String id, String nameService, Double area, int price, int maxPeople, String rentType, String typeVilla, Double areaPool, int numFloorOfVilla) {
+    public Villa(String id, String nameService, String area, String price, String maxPeople, String rentType, String typeVilla, String areaPool, String numFloorOfVilla) {
         super(id, nameService, area, price, maxPeople, rentType);
         this.typeVilla = typeVilla;
         this.areaPool = areaPool;
@@ -20,19 +20,19 @@ public class Villa extends Services {
         this.typeVilla = typeVilla;
     }
 
-    public Double getAreaPool() {
+    public String getAreaPool() {
         return areaPool;
     }
 
-    public void setAreaPool(Double areaPool) {
+    public void setAreaPool(String areaPool) {
         this.areaPool = areaPool;
     }
 
-    public int getNumFloorOfVilla() {
+    public String getNumFloorOfVilla() {
         return numFloorOfVilla;
     }
 
-    public void setNumFloorOfVilla(int numFloorOfVilla) {
+    public void setNumFloorOfVilla(String numFloorOfVilla) {
         this.numFloorOfVilla = numFloorOfVilla;
     }
 
