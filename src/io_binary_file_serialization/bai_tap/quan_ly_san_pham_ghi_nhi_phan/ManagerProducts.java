@@ -82,7 +82,7 @@ public class ManagerProducts {
 
         products.add(new Product(idProduct, nameProduct, productFrom, priceProduct, aboutProduct));
         writeToFile(products);
-        return;
+
     }
 
     public static Integer chooseMenu(Scanner scanner) {

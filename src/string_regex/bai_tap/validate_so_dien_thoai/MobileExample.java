@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MobileExample {
-    private static final String MOBILE_REGEX = "^[0-9][0-9]\\-[0-9]{10}$";
+    private static final String MOBILE_REGEX = "^\\([0-9]{2}\\)\\-[0-9]{10}$";
 
     public MobileExample() {
     }
