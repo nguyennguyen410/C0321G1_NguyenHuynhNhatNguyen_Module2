@@ -1,10 +1,7 @@
 package views;
 
 import controllers.MainController;
-import manager.ManagerHouse;
-import manager.ManagerOtherServices;
-import manager.ManagerRoom;
-import manager.ManagerVilla;
+import manager.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -69,7 +66,14 @@ public class Main {
                             break;
 
                     }
-
+                case 3:
+                    ManagerCustomer managerCustomer = new ManagerCustomer();
+                    managerCustomer.addNewCustomer();
+                    break;
+                case 4:
+                    ManagerCustomer managerCustomer1 = new ManagerCustomer();
+                    managerCustomer1.showInformationCustomer();
+                    break;
             }
         } while (input != 7);
 

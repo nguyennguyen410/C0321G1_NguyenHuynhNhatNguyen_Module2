@@ -28,7 +28,7 @@ public class ManagerVilla {
         System.out.println("Add New Villa: ");
         do {
             System.out.println("Id (SVVL-YYYY with Y from 0-9): ");
-            id = scanner.next();
+            id = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexIdVilla(id);
             if(!check){
@@ -38,7 +38,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Name Service: ");
-            nameService = scanner.next();
+            nameService = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexNameService(nameService);
             if(!check){
@@ -49,7 +49,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Area: ");
-            area = scanner.next();
+            area = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(area);
             if(!check){
@@ -59,7 +59,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Price: ");
-            price = scanner.next();
+            price = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPrice(price);
             if(!check){
@@ -69,7 +69,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Max People:");
-            maxPeople = scanner.next();
+            maxPeople = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPeople(maxPeople);
             if(!check){
@@ -79,7 +79,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Rent Type: ");
-            rentType = scanner.next();
+            rentType = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexRentType(rentType);
             if(!check){
@@ -90,7 +90,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Type Villa: ");
-            typeVilla = scanner.next();
+            typeVilla = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexTypeVilla(typeVilla);
             if(!check){
@@ -101,7 +101,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Area Pool (type float or double)");
-            areaPool = scanner.next();
+            areaPool = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(areaPool);
             if(!check){
@@ -111,7 +111,7 @@ public class ManagerVilla {
 
         do {
             System.out.println("Number Floor Of Villa: ");
-            numFloor = scanner.next();
+            numFloor = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexFloor(numFloor);
             if(!check){
@@ -121,7 +121,7 @@ public class ManagerVilla {
 
         /*do {
             System.out.println("other service: ");
-            otherService = scanner.next();
+            otherService = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexOtherServices(otherService);
             if(!check){
@@ -132,7 +132,7 @@ public class ManagerVilla {
 
         Villa villa = new Villa(id, nameService, area, price, maxPeople, rentType, typeVilla, areaPool, numFloor);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
-        functionWriteAndRead.writeFile("src\\data\\villa", villa.toString());
+        functionWriteAndRead.writeFile("src\\data\\villa", villa.showInfor());
         System.out.println("Villa added");
     }
 
@@ -202,7 +202,7 @@ public class ManagerVilla {
     }
 
     public boolean regexNameService(String regex){
-        final String NAME_SERVICE_REGEX = "^[A-Z]*$";
+        final String NAME_SERVICE_REGEX = "^[A-Z][a-z]*$";
         Pattern pattern = Pattern.compile(NAME_SERVICE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();

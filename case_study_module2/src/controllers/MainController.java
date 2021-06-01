@@ -47,4 +47,6 @@ public class MainController {
         input = scanner.nextInt();
         return input;
     }
+
+
 }

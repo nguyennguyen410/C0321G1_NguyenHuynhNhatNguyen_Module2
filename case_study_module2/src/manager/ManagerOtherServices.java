@@ -12,13 +12,13 @@ public class ManagerOtherServices {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Add New Other Services: ");
         System.out.println("Id: ");
-        String id = scanner.next();
+        String id = scanner.nextLine();
 
         System.out.println("Name Service: ");
-        String nameService = scanner.next();
+        String nameService = scanner.nextLine();
 
         System.out.println("Price: ");
-        String price = scanner.next();
+        String price = scanner.nextLine();
 
         OtherService otherService = new OtherService(id, nameService, price);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();

@@ -19,7 +19,7 @@ public class ManagerRoom {
         System.out.println("Add New Room: ");
         do {
             System.out.println("Id Room: ");
-            id = scanner.next();
+            id = scanner.nextLine();
             ManagerRoom managerRoom = new ManagerRoom();
             check = managerRoom.regexIdRoom(id);
             if (!check){
@@ -29,7 +29,7 @@ public class ManagerRoom {
 
         do {
             System.out.println("Name Service: ");
-            nameService = scanner.next();
+            nameService = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexNameService(nameService);
             if(!check){
@@ -39,7 +39,7 @@ public class ManagerRoom {
 
         do {
             System.out.println("Area: ");
-            area = scanner.next();
+            area = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(area);
             if(!check){
@@ -49,7 +49,7 @@ public class ManagerRoom {
 
         do {
             System.out.println("Price: ");
-            price = scanner.next();
+            price = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPrice(price);
             if(!check){
@@ -59,7 +59,7 @@ public class ManagerRoom {
 
         do {
             System.out.println("Max People:");
-            maxPeople = scanner.next();
+            maxPeople = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPeople(maxPeople);
             if(!check){
@@ -69,7 +69,7 @@ public class ManagerRoom {
 
         do {
             System.out.println("Rent Type: ");
-            rentType = scanner.next();
+            rentType = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexRentType(rentType);
             if(!check){
@@ -79,13 +79,13 @@ public class ManagerRoom {
 
 
         System.out.println("Free Service: ");
-        freeService = scanner.next();
+        freeService = scanner.nextLine();
 
 
 
         Room room = new Room(id, nameService, area, price, maxPeople, rentType, freeService);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
-        functionWriteAndRead.writeFile("src\\data\\room", room.toString());
+        functionWriteAndRead.writeFile("src\\data\\room", room.showInfor());
         System.out.println("Room added");
     }
 
