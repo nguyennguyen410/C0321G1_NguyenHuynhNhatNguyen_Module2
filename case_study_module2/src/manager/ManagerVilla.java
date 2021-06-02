@@ -6,6 +6,7 @@ import models.Villa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -153,7 +154,7 @@ public class ManagerVilla {
     }
 
     public boolean regexArea(String regex){
-        final String AREA_POOL_REGEX = "^[0-9]\\.[0-9]+$";
+        final String AREA_POOL_REGEX = "^[0-9]*\\.[0-9]+$";
         Pattern pattern = Pattern.compile(AREA_POOL_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
@@ -206,5 +207,14 @@ public class ManagerVilla {
         Pattern pattern = Pattern.compile(NAME_SERVICE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
+    }
+
+    public void showNameVillaNotDup(){
+        TreeSet<Villa> treeSet = new TreeSet<Villa>();
+        List<Villa> list = new FunctionWriteAndRead().readFileVilla("src\\data\\villa");
+        treeSet.addAll(list);
+        for (Villa villa:treeSet){
+            System.out.println(villa.toString());
+        }
     }
 }

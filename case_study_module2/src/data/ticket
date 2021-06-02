@@ -1,0 +1,3 @@
+Customer{nameCustomer='Dung', birthDay=' 20/11/1995', sex=' Female', idCard=' 888 888 888', mobile=' (84)7777777777', email=' sjfhe@ngjdg.com', typeCustomer=' platinum'}
+Customer{nameCustomer='Nguyen', birthDay=' 04/10/1989', sex=' Male', idCard=' 201 575 190', mobile=' 38947583', email=' cajnckja@angjkd.com', typeCustomer=' gold'}
+Customer{nameCustomer='Nguyen Nguyen', birthDay=' 04/10/1984', sex=' Male', idCard=' 201 575 190', mobile=' (84)0921231232', email=' jashdyus@jdhkgr.com', typeCustomer=' silver'}

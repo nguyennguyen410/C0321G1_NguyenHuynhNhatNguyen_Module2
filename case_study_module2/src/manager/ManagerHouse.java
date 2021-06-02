@@ -7,6 +7,7 @@ import models.Villa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -120,5 +121,14 @@ public class ManagerHouse {
         Pattern pattern = Pattern.compile(ID_HOUSE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
+    }
+
+    public void showNameHouseNotDup(){
+        TreeSet<House> treeSet = new TreeSet<House>();
+        List<House> list = new FunctionWriteAndRead().readFileHouse("src\\data\\house");
+        treeSet.addAll(list);
+        for (House house:treeSet){
+            System.out.println(house.toString());
+        }
     }
 }

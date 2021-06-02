@@ -12,7 +12,9 @@ public class MainController {
                 + "4. Show Information Of Customer \n"
                 + "5. Add New Booking \n"
                 + "6. Show Information Of Employee \n"
-                + "7. Exit \n");
+                + "7. Buy Ticket \n"
+                + "8. Search Employee \n"
+                + "9. Exit \n");
         Scanner scanner = new Scanner(System.in);
         input = scanner.nextInt();
 
@@ -48,5 +50,27 @@ public class MainController {
         return input;
     }
 
+    public int showServicesForCustomer() {
+        int input;
+        System.out.println("Choose Menu: \n"
+                + "1. Booking Villa \n"
+                + "2. Booking House \n"
+                + "3. Booking Room \n"
+                + "4. Booking Ticket Cinema \n"
+                + "5. Exit \n");
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextInt();
+        return input;
+    }
 
+    public int showBuyTicket() {
+        int input;
+        System.out.println("Choose Menu: \n"
+                + "1. Buy Ticket \n"
+                + "2. Back to Menu \n"
+                );
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextInt();
+        return input;
+    }
 }

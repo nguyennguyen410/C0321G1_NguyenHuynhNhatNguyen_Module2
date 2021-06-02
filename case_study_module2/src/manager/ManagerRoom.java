@@ -2,10 +2,12 @@ package manager;
 
 import common.FunctionWriteAndRead;
 import models.Room;
+import models.Villa;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -103,6 +105,15 @@ public class ManagerRoom {
         Pattern pattern = Pattern.compile(ROOM_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
+    }
+
+    public void showNameRoomNotDup(){
+        TreeSet<Room> treeSet = new TreeSet<Room>();
+        List<Room> list = new FunctionWriteAndRead().readFileRoom("src\\data\\room");
+        treeSet.addAll(list);
+        for (Room room:treeSet){
+            System.out.println(room.toString());
+        }
     }
 }
 

@@ -8,6 +8,7 @@ public class Customer implements Comparable<Customer> {
     private String mobile;
     private String email;
     private String typeCustomer;
+    private Services typeService;
 
     public Customer() {
     }
@@ -76,6 +77,14 @@ public class Customer implements Comparable<Customer> {
 
     public void setTypeCustomer(String typeCustomer) {
         this.typeCustomer = typeCustomer;
+    }
+
+    public Services getTypeService() {
+        return typeService;
+    }
+
+    public void setTypeService(Services typeService) {
+        this.typeService = typeService;
     }
 
     @Override
