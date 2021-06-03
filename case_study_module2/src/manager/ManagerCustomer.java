@@ -22,7 +22,12 @@ public class ManagerCustomer {
         String typeCustomer = null;
         Scanner scanner = new Scanner(System.in);
         boolean check = false;
-
+        boolean check1 = false;
+        boolean check2 = false;
+        boolean check3 = false;
+        boolean check4 = false;
+        boolean check5 = false;
+        boolean check6 = false;
         System.out.println("Add Customer: ");
         do {
             try {
@@ -40,11 +45,12 @@ public class ManagerCustomer {
                 System.out.println("Input birthday: ");
                 birthDay = scanner.nextLine();
                 BirthdayCheck birthdayCheck = new BirthdayCheck();
-                check = birthdayCheck.checkBirthday(birthDay);
+                check1 = birthdayCheck.checkBirthday(birthDay);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (!check1);
+
 
 
         do {
@@ -52,34 +58,34 @@ public class ManagerCustomer {
                 System.out.println("Input sex: ");
                 sex = scanner.nextLine();
                 GenderCheck genderCheck = new GenderCheck();
-                check = genderCheck.checkGender(sex);
+                check2 = genderCheck.checkGender(sex);
                 sex = genderCheck.fixGender(sex);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (!check2);
 
         do {
             try {
                 System.out.println("Input idCard: ");
                 idCard = scanner.nextLine();
                 IdCardCheck idCardCheck = new IdCardCheck();
-                check = idCardCheck.checkIdCard(idCard);
+                check3 = idCardCheck.checkIdCard(idCard);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (!check3);
 
         do {
             try {
                 System.out.println("Input mobile: ");
                 mobile = scanner.nextLine();
                 MobileCheck mobileCheck = new MobileCheck();
-                check = mobileCheck.checkMobile(mobile);
+                check4 = mobileCheck.checkMobile(mobile);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (!check4);
 
 
         do {
@@ -87,22 +93,22 @@ public class ManagerCustomer {
                 System.out.println("Input Email: ");
                 email = scanner.nextLine();
                 EmailCheck emailCheck = new EmailCheck();
-                check = emailCheck.checkName(email);
+                check5 = emailCheck.checkName(email);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (!check5);
 
         do {
             try {
                 System.out.println("Input type customer: ");
                 typeCustomer = scanner.nextLine();
                 TypeCustomerCheck typeCustomerCheck = new TypeCustomerCheck();
-                check = typeCustomerCheck.checkTypeCustomer(typeCustomer);
+                check6 = typeCustomerCheck.checkTypeCustomer(typeCustomer);
             } catch (Exception e) {
                 System.err.println(e.getMessage());
             }
-        } while (!check);
+        } while (!check6);
 
 
         Customer customer = new Customer(nameCustomer, birthDay, sex, idCard, mobile, email, typeCustomer);

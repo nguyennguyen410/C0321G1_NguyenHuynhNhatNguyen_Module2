@@ -35,6 +35,7 @@ public class Main {
                         case 6:
                             break;
                     }
+                    break;
                 case 2:
                     int input2 = mainController.showServices();
                     switch (input2) {
@@ -69,6 +70,7 @@ public class Main {
                             break;
 
                     }
+                    break;
                 case 3:
                     ManagerCustomer managerCustomer = new ManagerCustomer();
                     managerCustomer.addNewCustomer();

@@ -38,7 +38,7 @@ public class ManagerVilla {
         }while(!check);
 
         do {
-            System.out.println("Name Service: ");
+            System.out.println("Name Service (First word is upcase): ");
             nameService = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexNameService(nameService);
@@ -49,7 +49,7 @@ public class ManagerVilla {
 
 
         do {
-            System.out.println("Area: ");
+            System.out.println("Area (type double and over 30): ");
             area = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(area);
@@ -59,7 +59,7 @@ public class ManagerVilla {
         }while (!check);
 
         do {
-            System.out.println("Price: ");
+            System.out.println("Price (price > 0): ");
             price = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPrice(price);
@@ -69,7 +69,7 @@ public class ManagerVilla {
         }while (!check);
 
         do {
-            System.out.println("Max People:");
+            System.out.println("Max People (over zero and under twenty):");
             maxPeople = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPeople(maxPeople);
@@ -79,7 +79,7 @@ public class ManagerVilla {
         }while (!check);
 
         do {
-            System.out.println("Rent Type: ");
+            System.out.println("Rent Type (ShortDay or LongDay): ");
             rentType = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexRentType(rentType);
@@ -168,7 +168,7 @@ public class ManagerVilla {
     }
 
     public boolean regexPeople(String regex){
-        final String PEOPLE_REGEX = "^[1-20]$";
+        final String PEOPLE_REGEX = "^[0-9][0-9]$";
         Pattern pattern = Pattern.compile(PEOPLE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
@@ -189,21 +189,21 @@ public class ManagerVilla {
     }*/
 
     public boolean regexTypeVilla(String regex){
-        final String TYPE_VILLA_REGEX = "^[King|Queen|Vip]$";
+        final String TYPE_VILLA_REGEX = "^([K][i][n][g])|([Q][u][e][e][n])|([V][i][p])$";
         Pattern pattern = Pattern.compile(TYPE_VILLA_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
     public boolean regexRentType(String regex){
-        final String RENT_TYPE_REGEX = "^[ShortDay|LongDay]$";
+        final String RENT_TYPE_REGEX = "^([S][h][o][r][t][D][a][y])|([L][o][n][g][D][a][y])$";
         Pattern pattern = Pattern.compile(RENT_TYPE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
     public boolean regexNameService(String regex){
-        final String NAME_SERVICE_REGEX = "^[A-Z][a-z]*$";
+        final String NAME_SERVICE_REGEX = "^[A-Z][a-z0-9]*$";
         Pattern pattern = Pattern.compile(NAME_SERVICE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
