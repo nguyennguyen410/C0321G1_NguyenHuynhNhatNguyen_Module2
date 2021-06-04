@@ -38,8 +38,8 @@ public class House extends Services implements Comparable<House> {
 
     @Override
     public String showInfor() {
-        return getId() + ", " + getNameService() + ", " + getArea() + ", " + getPrice() + ", " + getMaxPeople() +
-                ", " + getRentType() + ", " + getTypeHouse() + ", " + getNumFloorOfHouse();
+        return getId() + "," + getNameService() + "," + getArea() + "," + getPrice() + "," + getMaxPeople() +
+                "," + getRentType() + "," + getTypeHouse() + "," + getNumFloorOfHouse();
     }
 
     @Override

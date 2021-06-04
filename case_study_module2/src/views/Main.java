@@ -7,6 +7,11 @@ public class Main {
     public static void main(String[] args) {
         int input;
         MainController mainController = new MainController();
+        ManagerVilla managerVilla = new ManagerVilla();
+        ManagerHouse managerHouse = new ManagerHouse();
+        ManagerRoom managerRoom = new ManagerRoom();
+        ManagerOtherServices managerOtherServices = new ManagerOtherServices();
+        ManagerCustomer managerCustomer = new ManagerCustomer();
         do {
             input = mainController.displayMainMenu();
             switch (input) {
@@ -14,19 +19,15 @@ public class Main {
                     int input1 = mainController.addNewServices();
                     switch (input1) {
                         case 1:
-                            ManagerVilla managerVilla = new ManagerVilla();
                             managerVilla.addNewVilla();
                             break;
                         case 2:
-                            ManagerHouse managerHouse = new ManagerHouse();
                             managerHouse.addNewHouse();
                             break;
                         case 3:
-                            ManagerRoom managerRoom = new ManagerRoom();
                             managerRoom.addNewRoom();
                             break;
                         case 4:
-                            ManagerOtherServices managerOtherServices = new ManagerOtherServices();
                             managerOtherServices.addNewOtherService();
                             break;
                         case 5:
@@ -40,28 +41,22 @@ public class Main {
                     int input2 = mainController.showServices();
                     switch (input2) {
                         case 1:
-                            ManagerVilla managerVilla = new ManagerVilla();
                             managerVilla.showAllVilla();
                             break;
                         case 2:
-                            ManagerHouse managerHouse = new ManagerHouse();
                             managerHouse.showAllHouse();
                             break;
                         case 3:
-                            ManagerRoom managerRoom = new ManagerRoom();
                             managerRoom.showAllRoom();
                             break;
                         case 4:
-                            ManagerVilla managerVilla1 = new ManagerVilla();
-                            managerVilla1.showNameVillaNotDup();
+                            managerVilla.showNameVillaNotDup();
                             break;
                         case 5:
-                            ManagerHouse managerHouse1 = new ManagerHouse();
-                            managerHouse1.showNameHouseNotDup();
+                            managerHouse.showNameHouseNotDup();
                             break;
                         case 6:
-                            ManagerRoom managerRoom1 = new ManagerRoom();
-                            managerRoom1.showNameRoomNotDup();
+                            managerRoom.showNameRoomNotDup();
                             break;
                         case 7:
                             mainController.displayMainMenu();
@@ -72,16 +67,13 @@ public class Main {
                     }
                     break;
                 case 3:
-                    ManagerCustomer managerCustomer = new ManagerCustomer();
                     managerCustomer.addNewCustomer();
                     break;
                 case 4:
-                    ManagerCustomer managerCustomer1 = new ManagerCustomer();
-                    managerCustomer1.showInformationCustomer();
+                    managerCustomer.showInformationCustomer();
                     break;
                 case 5:
-                    ManagerCustomer managerCustomer2 = new ManagerCustomer();
-                    managerCustomer2.addNewBooking();
+                    managerCustomer.addNewBooking();
                     break;
                 case 6:
                     ManagerEmployee managerEmployee = new ManagerEmployee();
@@ -89,10 +81,9 @@ public class Main {
                     break;
                 case 7:
                     int inputTicket = mainController.showBuyTicket();
-                    switch (inputTicket){
+                    switch (inputTicket) {
                         case 1:
-                            ManagerCustomer managerCustomer3 = new ManagerCustomer();
-                            managerCustomer3.buyTicketCinema();
+                            managerCustomer.buyTicketCinema();
                             break;
                         case 2:
                             mainController.displayMainMenu();
@@ -104,6 +95,29 @@ public class Main {
                     managerEmployee3.searchEmployee();
                     break;
                 case 9:
+                    int input4 = mainController.showEditServices();
+                    switch (input4) {
+                        case 1:
+                            int input5 = mainController.showMenuEditServices();
+                            switch (input5) {
+                                case 1:
+                                    managerVilla.editVilla();
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            int input6 = mainController.showMenuDeleteServices();
+                            switch (input6){
+                                case 1:
+                                    managerVilla.deleteVilla();
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            break;
+                    }
+                    break;
+                case 10:
                     break;
             }
         } while (input != 9);

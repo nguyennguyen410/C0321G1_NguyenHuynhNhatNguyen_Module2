@@ -49,8 +49,8 @@ public class Employee {
 
     public String showInfor() {
         return nameEmployee +
-                ", " + age +
-                ", " + adress;
+                "," + age +
+                "," + adress;
 
     }
 }

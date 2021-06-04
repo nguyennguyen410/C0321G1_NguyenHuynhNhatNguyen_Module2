@@ -40,22 +40,36 @@ public class FunctionWriteAndRead {
         }
     }
 
+    public void writeFileOverride(String filePath, List<Villa> list) {
+        try {
+            FileWriter writer = new FileWriter(filePath, false);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            for (int i = 0; i < list.size(); i++) {
+                bufferedWriter.write(list.get(i).showInfor());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<Villa> readFileVilla(String filePath) {
         List<Villa> listVilla = new ArrayList<>();
         List<String> list = readFile(filePath);
-       for (int i=0; i<list.size(); i++){
-           String[] string = list.get(i).split(",");
-           listVilla.add(new Villa(string[0],string[1],string[2],string[3],string[4],string[5],string[6],string[7],string[8]));
-       }
+        for (int i = 0; i < list.size(); i++) {
+            String[] string = list.get(i).split(",");
+            listVilla.add(new Villa(string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7], string[8]));
+        }
         return listVilla;
     }
 
-    public List<Customer> readFileCustomer(String filePath){
+    public List<Customer> readFileCustomer(String filePath) {
         List<Customer> listCustomer = new ArrayList<>();
         List<String> list = readFile(filePath);
-        for (int i=0; i<list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             String[] string = list.get(i).split(",");
-            listCustomer.add(new Customer(string[0],string[1],string[2],string[3],string[4],string[5],string[6]));
+            listCustomer.add(new Customer(string[0], string[1], string[2], string[3], string[4], string[5], string[6]));
         }
         return listCustomer;
     }
@@ -63,9 +77,9 @@ public class FunctionWriteAndRead {
     public List<House> readFileHouse(String filePath) {
         List<House> listHouse = new ArrayList<>();
         List<String> list = readFile(filePath);
-        for (int i=0; i<list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             String[] string = list.get(i).split(",");
-            listHouse.add(new House(string[0],string[1],string[2],string[3],string[4],string[5],string[6],string[7]));
+            listHouse.add(new House(string[0], string[1], string[2], string[3], string[4], string[5], string[6], string[7]));
         }
         return listHouse;
     }
@@ -73,9 +87,9 @@ public class FunctionWriteAndRead {
     public List<Room> readFileRoom(String filePath) {
         List<Room> listRoom = new ArrayList<>();
         List<String> list = readFile(filePath);
-        for (int i=0; i<list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             String[] string = list.get(i).split(",");
-            listRoom.add(new Room(string[0],string[1],string[2],string[3],string[4],string[5],string[6]));
+            listRoom.add(new Room(string[0], string[1], string[2], string[3], string[4], string[5], string[6]));
         }
         return listRoom;
     }
@@ -83,9 +97,9 @@ public class FunctionWriteAndRead {
     public List<Employee> readFileEmployee(String filePath) {
         List<Employee> listEmployee = new ArrayList<>();
         List<String> list = readFile(filePath);
-        for (int i=0; i<list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             String[] string = list.get(i).split(",");
-            listEmployee.add(new Employee(string[0],string[1],string[2]));
+            listEmployee.add(new Employee(string[0], string[1], string[2]));
         }
         return listEmployee;
     }

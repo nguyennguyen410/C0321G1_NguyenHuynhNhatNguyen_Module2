@@ -26,8 +26,8 @@ public class Room extends Services implements Comparable<Room> {
 
     @Override
     public String showInfor() {
-        return getId() + ", " + getNameService() + ", " + getArea() + ", " + getPrice() + ", " + getMaxPeople() +
-                ", " + getRentType() + ", " + getFreeService();
+        return getId() + "," + getNameService() + "," + getArea() + "," + getPrice() + "," + getMaxPeople() +
+                "," + getRentType() + "," + getFreeService();
     }
 
     @Override

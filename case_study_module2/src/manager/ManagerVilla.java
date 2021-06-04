@@ -1,6 +1,7 @@
 package manager;
 
 import common.FunctionWriteAndRead;
+import controllers.MainController;
 import models.Villa;
 
 import java.util.ArrayList;
@@ -32,20 +33,20 @@ public class ManagerVilla {
             id = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexIdVilla(id);
-            if(!check){
+            if (!check) {
                 System.err.println("Id is not invalid");
             }
-        }while(!check);
+        } while (!check);
 
         do {
             System.out.println("Name Service (First word is upcase): ");
             nameService = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexNameService(nameService);
-            if(!check){
+            if (!check) {
                 System.err.println("Name Service is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
 
         do {
@@ -53,40 +54,40 @@ public class ManagerVilla {
             area = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(area);
-            if(!check){
+            if (!check) {
                 System.err.println("Area is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Price (price > 0): ");
             price = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPrice(price);
-            if(!check){
+            if (!check) {
                 System.err.println("Price is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Max People (over zero and under twenty):");
             maxPeople = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPeople(maxPeople);
-            if(!check){
+            if (!check) {
                 System.err.println("Max People is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Rent Type (ShortDay or LongDay): ");
             rentType = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexRentType(rentType);
-            if(!check){
+            if (!check) {
                 System.err.println("Rent Type is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
 
         do {
@@ -94,31 +95,31 @@ public class ManagerVilla {
             typeVilla = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexTypeVilla(typeVilla);
-            if(!check){
+            if (!check) {
                 System.err.println("Type Villa is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
 
         do {
-            System.out.println("Area Pool (type float or double)");
+            System.out.println("Area Pool (type  double and over 30)");
             areaPool = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(areaPool);
-            if(!check){
+            if (!check) {
                 System.err.println("AreaPool is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Number Floor Of Villa: ");
             numFloor = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexFloor(numFloor);
-            if(!check){
+            if (!check) {
                 System.err.println("Number Floor is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         /*do {
             System.out.println("other service: ");
@@ -132,6 +133,7 @@ public class ManagerVilla {
 
 
         Villa villa = new Villa(id, nameService, area, price, maxPeople, rentType, typeVilla, areaPool, numFloor);
+
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
         functionWriteAndRead.writeFile("src\\data\\villa", villa.showInfor());
         System.out.println("Villa added");
@@ -142,39 +144,85 @@ public class ManagerVilla {
         listVilla = functionWriteAndRead.readFile("src\\data\\villa");
         System.out.println("All Villa: ");
         for (String list : listVilla) {
-            System.out.println(list.toString());
+            System.out.println(list);
         }
     }
 
-    public boolean regexIdVilla(String regex){
+    public void editVilla() {
+        FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
+        List<Villa> villas = functionWriteAndRead.readFileVilla("src\\data\\villa");
+
+        for (int i = 0; i < villas.size(); i++) {
+            System.out.println(i + ": " + villas.get(i));
+        }
+        System.out.println("Choose Villa to edit: ");
+        Scanner scanner = new Scanner(System.in);
+        int index = Integer.parseInt(scanner.nextLine());
+        Villa villa = villas.remove(index);
+        System.out.println(villa.toString());
+        System.out.println("Input new ID: ");
+        String newId = scanner.nextLine();
+
+        villa.setId(newId);
+        villas.add(index, villa);
+        System.out.println(villas.get(index).toString());
+        System.out.println("Edit Success");
+
+        functionWriteAndRead.writeFileOverride("src\\data\\villa", villas);
+
+    }
+
+    public void deleteVilla() {
+        FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
+        List<Villa> villas = functionWriteAndRead.readFileVilla("src\\data\\villa");
+
+        for (int i = 0; i < villas.size(); i++) {
+            System.out.println(i + ": " + villas.get(i));
+        }
+        System.out.println("Choose Villa to delete: ");
+        Scanner scanner = new Scanner(System.in);
+        int index = Integer.parseInt(scanner.nextLine());
+        System.out.println("Are you sure? Input 1 to delete.");
+        int apply = Integer.parseInt(scanner.nextLine());
+        if (apply==1){
+            Villa villa = villas.remove(index);
+            System.out.println("Deleted: "+villa.toString());
+            functionWriteAndRead.writeFileOverride("src\\data\\villa", villas);
+        } else {
+            MainController mainController = new MainController();
+            mainController.displayMainMenu();
+        }
+    }
+
+    public boolean regexIdVilla(String regex) {
         final String VILLA_REGEX = "^SVVL\\-[0-9]{4}$";
         Pattern pattern = Pattern.compile(VILLA_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public boolean regexArea(String regex){
-        final String AREA_POOL_REGEX = "^[0-9]*\\.[0-9]+$";
+    public boolean regexArea(String regex) {
+        final String AREA_POOL_REGEX = "^[1-9][0-9]*\\.[0-9]+$";
         Pattern pattern = Pattern.compile(AREA_POOL_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public boolean regexPrice(String regex){
+    public boolean regexPrice(String regex) {
         final String PRICE_REGEX = "^[1-9]\\d*$";
         Pattern pattern = Pattern.compile(PRICE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public boolean regexPeople(String regex){
-        final String PEOPLE_REGEX = "^[0-9][0-9]$";
+    public boolean regexPeople(String regex) {
+        final String PEOPLE_REGEX = "^[0-1]|[1-9]$";
         Pattern pattern = Pattern.compile(PEOPLE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public boolean regexFloor(String regex){
+    public boolean regexFloor(String regex) {
         final String FLOOR_REGEX = "^[0-9]+$";
         Pattern pattern = Pattern.compile(FLOOR_REGEX);
         Matcher matcher = pattern.matcher(regex);
@@ -188,32 +236,32 @@ public class ManagerVilla {
         return matcher.matches();
     }*/
 
-    public boolean regexTypeVilla(String regex){
+    public boolean regexTypeVilla(String regex) {
         final String TYPE_VILLA_REGEX = "^([K][i][n][g])|([Q][u][e][e][n])|([V][i][p])$";
         Pattern pattern = Pattern.compile(TYPE_VILLA_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public boolean regexRentType(String regex){
+    public boolean regexRentType(String regex) {
         final String RENT_TYPE_REGEX = "^([S][h][o][r][t][D][a][y])|([L][o][n][g][D][a][y])$";
         Pattern pattern = Pattern.compile(RENT_TYPE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public boolean regexNameService(String regex){
+    public boolean regexNameService(String regex) {
         final String NAME_SERVICE_REGEX = "^[A-Z][a-z0-9]*$";
         Pattern pattern = Pattern.compile(NAME_SERVICE_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 
-    public void showNameVillaNotDup(){
+    public void showNameVillaNotDup() {
         TreeSet<Villa> treeSet = new TreeSet<Villa>();
         List<Villa> list = new FunctionWriteAndRead().readFileVilla("src\\data\\villa");
         treeSet.addAll(list);
-        for (Villa villa:treeSet){
+        for (Villa villa : treeSet) {
             System.out.println(villa.toString());
         }
     }

@@ -16,7 +16,7 @@ public class OtherService {
 
     @Override
     public String toString() {
-        return idOtherSvice + ", " + otherService + ", " + price;
+        return idOtherSvice + "," + otherService + "," + price;
     }
 
 }

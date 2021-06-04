@@ -36,70 +36,70 @@ public class ManagerHouse {
             nameService = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexNameService(nameService);
-            if(!check){
+            if (!check) {
                 System.err.println("Name Service is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Area: ");
             area = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexArea(area);
-            if(!check){
+            if (!check) {
                 System.err.println("Area is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Price: ");
             price = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPrice(price);
-            if(!check){
+            if (!check) {
                 System.err.println("Price is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Max People:");
             maxPeople = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexPeople(maxPeople);
-            if(!check){
+            if (!check) {
                 System.err.println("Max People is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Rent Type: ");
             rentType = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexRentType(rentType);
-            if(!check){
+            if (!check) {
                 System.err.println("Rent Type is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Type House: ");
             typeHouse = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexTypeVilla(typeHouse);
-            if(!check){
+            if (!check) {
                 System.err.println("Type House is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         do {
             System.out.println("Number Floor Of House: ");
             numFloor = scanner.nextLine();
             ManagerVilla managerVilla = new ManagerVilla();
             check = managerVilla.regexFloor(numFloor);
-            if(!check){
+            if (!check) {
                 System.err.println("Number Floor is not invalid");
             }
-        }while (!check);
+        } while (!check);
 
         House house = new House(id, nameService, area, price, maxPeople, rentType, typeHouse, numFloor);
         FunctionWriteAndRead functionWriteAndRead = new FunctionWriteAndRead();
@@ -123,11 +123,11 @@ public class ManagerHouse {
         return matcher.matches();
     }
 
-    public void showNameHouseNotDup(){
+    public void showNameHouseNotDup() {
         TreeSet<House> treeSet = new TreeSet<House>();
         List<House> list = new FunctionWriteAndRead().readFileHouse("src\\data\\house");
         treeSet.addAll(list);
-        for (House house:treeSet){
+        for (House house : treeSet) {
             System.out.println(house.toString());
         }
     }

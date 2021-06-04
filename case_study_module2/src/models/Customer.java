@@ -102,12 +102,12 @@ public class Customer implements Comparable<Customer> {
 
     public String showInfor() {
         return nameCustomer +
-                ", " + birthDay +
-                ", " + sex +
-                ", " + idCard +
-                ", " + mobile +
-                ", " + email +
-                ", " + typeCustomer;
+                "," + birthDay +
+                "," + sex +
+                "," + idCard +
+                "," + mobile +
+                "," + email +
+                "," + typeCustomer;
     }
 
     @Override

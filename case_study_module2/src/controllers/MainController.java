@@ -14,7 +14,8 @@ public class MainController {
                 + "6. Show Information Of Employee \n"
                 + "7. Buy Ticket \n"
                 + "8. Search Employee \n"
-                + "9. Exit \n");
+                + "9. Edit Or Delete Services \n"
+                + "10. Exit \n");
         Scanner scanner = new Scanner(System.in);
         input = scanner.nextInt();
 
@@ -68,7 +69,45 @@ public class MainController {
         System.out.println("Choose Menu: \n"
                 + "1. Buy Ticket \n"
                 + "2. Back to Menu \n"
-                );
+        );
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextInt();
+        return input;
+    }
+
+    public int showEditServices() {
+        int input;
+        System.out.println("Choose Menu: \n"
+                + "1. Edit Services \n"
+                + "2. Delete Services \n"
+                + "3. Exit \n"
+        );
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextInt();
+        return input;
+    }
+
+    public int showMenuEditServices() {
+        int input;
+        System.out.println("Choose Service: \n"
+                + "1. Edit Villas \n"
+                + "2. Edit Houses \n"
+                + "3. Edit Rooms \n"
+                + "4. Exit \n"
+        );
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.nextInt();
+        return input;
+    }
+
+    public int showMenuDeleteServices() {
+        int input;
+        System.out.println("Choose Service: \n"
+                + "1. Delete Villas \n"
+                + "2. Delete Houses \n"
+                + "3. Delete Rooms \n"
+                + "4. Exit \n"
+        );
         Scanner scanner = new Scanner(System.in);
         input = scanner.nextInt();
         return input;

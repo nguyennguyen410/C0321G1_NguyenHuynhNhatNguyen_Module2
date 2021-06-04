@@ -52,7 +52,6 @@ public class ManagerCustomer {
         } while (!check1);
 
 
-
         do {
             try {
                 System.out.println("Input sex: ");
@@ -164,7 +163,7 @@ public class ManagerCustomer {
         int input = mainController.showServicesForCustomer();
         switch (input) {
             case 1:
-                addVillaForCustomer(customer, scanner);
+                addVillaForCustomer(customer);
                 break;
             case 2:
                 addHouseForCustomer(customer, scanner);
@@ -232,7 +231,7 @@ public class ManagerCustomer {
         customer.setTypeService(room);
 
         FunctionWriteAndRead writeBooking2 = new FunctionWriteAndRead();
-        writeBooking2.writeFile("src\\data\\booking", ", " + customer.showInfor() + customer.getTypeService().showInfor());
+        writeBooking2.writeFile("src\\data\\booking",  customer.showInfor() + customer.getTypeService().showInfor());
     }
 
     public void addHouseForCustomer(Customer customer, Scanner scanner) {
@@ -248,11 +247,12 @@ public class ManagerCustomer {
         customer.setTypeService(house);
 
         FunctionWriteAndRead writeBooking1 = new FunctionWriteAndRead();
-        writeBooking1.writeFile("src\\data\\booking", ", " + customer.showInfor() + customer.getTypeService().showInfor());
+        writeBooking1.writeFile("src\\data\\booking",  customer.showInfor() + customer.getTypeService().showInfor());
     }
 
-    public void addVillaForCustomer(Customer customer, Scanner scanner) {
+    public void addVillaForCustomer(Customer customer) {
         Villa villa;
+        Scanner scanner = new Scanner(System.in);
         List<Villa> villas = new FunctionWriteAndRead().readFileVilla("src\\data\\villa");
         System.out.println("Choose Villa: ");
         for (int i = 0; i < villas.size(); i++) {
@@ -263,6 +263,6 @@ public class ManagerCustomer {
         villa = villas.get(indexVilla);
         customer.setTypeService(villa);
         FunctionWriteAndRead writeBooking = new FunctionWriteAndRead();
-        writeBooking.writeFile("src\\data\\booking", ", " + customer.showInfor() + customer.getTypeService().showInfor());
+        writeBooking.writeFile("src\\data\\booking", customer.showInfor() + customer.getTypeService().showInfor());
     }
 }

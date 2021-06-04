@@ -1,7 +1,8 @@
-SVVL-1234, Villa1, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7, 2
-SVVL-1234, Villa1, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7, 2
-SVVL-1234, Villa2, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7, 2
-SVVL-1234, Villa2, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7, 2
+SVVL-1111, Villa1, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7
+SVVL-1234, Villa1, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7
+SVVL-1234, Villa2, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7
+SVVL-1234, Villa2, 123, 9.9, 12345, 5, ShortDay, aaaa, 7.7
 SVVL-3456, Villa4, 100.0, 2000000, 05, ShortDay, King, 50.0, 2
 SVVL-3456, Villa4, 200.0, 3000000, 09, LongDay, Queen, 50.0, 2
 SVVL-5678, Villa5, 200.0, 3000000, 06, ShortDay, Vip, 40.0, 3
+SVVL-2345, Villa7, 90.0, 2000000, 5, LongDay, Vip, 30.0, 2

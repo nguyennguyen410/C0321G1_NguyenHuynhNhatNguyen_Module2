@@ -47,8 +47,8 @@ public class Villa extends Services implements Comparable<Villa> {
 
     @Override
     public String showInfor() {
-        return getId() + ", " + getNameService() + ", " + getArea() + ", " + getPrice() + ", " + getMaxPeople() +
-                ", " + getRentType() + ", " + getTypeVilla() + ", " + getAreaPool() + ", " + getNumFloorOfVilla();
+        return getId() + "," + getNameService() + "," + getArea() + "," + getPrice() + "," + getMaxPeople() +
+                "," + getRentType() + "," + getTypeVilla() + "," + getAreaPool() + "," + getNumFloorOfVilla();
     }
 
     @Override

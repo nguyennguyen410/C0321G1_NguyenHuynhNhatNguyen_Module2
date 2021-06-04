@@ -20,7 +20,7 @@ public class ManagerRoom {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Add New Room: ");
         do {
-            System.out.println("Id Room: ");
+            System.out.println("Id Room (SVRO-XXXX): ");
             id = scanner.nextLine();
             ManagerRoom managerRoom = new ManagerRoom();
             check = managerRoom.regexIdRoom(id);
